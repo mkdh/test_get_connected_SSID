@@ -1,5 +1,5 @@
-#ifndef GET_SSID_H
-#define GET_SSID_H
+#ifndef CLS_GET_SSID_H
+#define CLS_GET_SSID_H
 
 
 #if __ANDROID__
@@ -10,13 +10,14 @@
 
 #endif
 #include <QDebug>
+QString wifiName();
 
-class GetSSID: public QObject
+class ClsGetSSID: public QObject
 {
     Q_OBJECT
 public:
-    GetSSID();
-    virtual ~GetSSID();
+    ClsGetSSID();
+    virtual ~ClsGetSSID();
 private:
 #if defined(Q_OS_ANDROID)
 
@@ -26,4 +27,4 @@ public slots:
     QString slot_get_ssid();
 };
 
-#endif // GET_SSID_H
+#endif // CLS_GET_SSID_H

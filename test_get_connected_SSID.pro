@@ -14,8 +14,9 @@ ios {
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    get_ssid.cpp \
-    ios/cls_system_dispatcher.cpp
+    ios/cls_system_dispatcher.cpp \
+    cls_get_ssid.cpp \
+    cls_get_ssid.mm
 
 RESOURCES += qml.qrc
 
@@ -42,8 +43,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    get_ssid.h \
-    ios/cls_system_dispatcher.h
+    ios/cls_system_dispatcher.h \
+    cls_get_ssid.h
 
 DISTFILES += \
     android/AndroidManifest.xml \

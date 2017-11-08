@@ -1,19 +1,19 @@
-#include "get_ssid.h"
+#include "cls_get_ssid.h"
 
 #include "ios/cls_system_dispatcher.h"
 
-GetSSID::GetSSID()
+ClsGetSSID::ClsGetSSID()
 {
 #if defined(Q_OS_ANDROID)
 #endif
 }
 
-GetSSID::~GetSSID()
+ClsGetSSID::~ClsGetSSID()
 {
 
 }
 
-QString GetSSID::slot_get_ssid()
+QString ClsGetSSID::slot_get_ssid()
 {
     QString currentSsid = "";
 
@@ -40,11 +40,13 @@ QString GetSSID::slot_get_ssid()
 
 #if defined(Q_OS_IOS)
     qDebug()<<"Q_OS_IOS";
+    /*
     QVariantMap map;
     map["style"] = 2;
 
     clsSystemDispatcher::instance()->dispatch("ios_get_ssid",map);
-
+    */
+    currentSsid = wifiName();
 #else//OS
     qDebug()<<"OS";
 #endif
